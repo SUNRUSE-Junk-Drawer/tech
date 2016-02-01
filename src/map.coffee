@@ -63,9 +63,29 @@ module.exports =
                         top: 5
                 default: "opened"
         dresser3:
-            activated: (game) -> switch game.objects.getState "dresser3"
-                when "opened" then game.objects.setState "dresser3", "closed"
-                when "closed" then game.objects.setState "dresser3", "opened"
+            activated: (game) ->
+                switch game.objects.getState "dresser3"
+                    when "opened" then game.objects.setState "dresser3", "closed"
+                    when "closed" then game.objects.setState "dresser3", "opened"
+                game.objects.say "dresser3",
+                  text: "Hey!  I'm a talking dresser."
+                  alignment:
+                      vertical: "above"
+                      horizontal: "left"
+                  duration: 2000
+                  position:
+                    x: 40
+                    y: 56
+                  callback: ->
+                    game.player.say
+                      alignment:
+                        vertical: "above"
+                        horizontal: "right"
+                      text: "Well there's a first time for everything, I suppose."
+                      duration: 2000
+                      position:
+                        x: 40
+                        y: 56
             states:
                 opened:
                     source:

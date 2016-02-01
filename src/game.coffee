@@ -1,5 +1,6 @@
 objects = require "./objects.coffee"
 player = require "./player.coffee"
+speech = require "./speech.coffee"
 
 module.exports = (map) ->
   element = document.createElement "div"
@@ -18,5 +19,6 @@ module.exports = (map) ->
 
   objects output
   player output
+  speech output
 
   element

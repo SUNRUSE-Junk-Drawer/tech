@@ -21,6 +21,13 @@ module.exports = (game) ->
         title = state.tooltip?[game.localization] or object.tooltip?[game.localization] or null
         if title isnt null then el.title = title
       return
+    say: (name, message) ->
+      object = game.map.objects[name]
+      state = object.states[game.objects.getState name]
+      message.position =
+        x: if message.alignment?.horizontal is "left" then state.destination.left else state.destination.left + state.source.right - state.source.left
+        y: if message.alignment?.vertical is "below" then state.destination.top + state.source.bottom - state.source.top else state.destination.top
+      game.speech.show message
 
   for key, value of game.map.objects
     do (key, value) ->

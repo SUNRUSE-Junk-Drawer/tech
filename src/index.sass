@@ -10,6 +10,12 @@
   pointer-events: none
   user-select: none
   cursor: default
+  font-smooth: never
+
+body
+  line-height: 5vmin
+  font-size: 4vmin
+  font-family: monospace
 
 .object
   position: absolute
@@ -28,3 +34,14 @@
   height: 24vmin
   margin-left: -3.5vmin
   transition: left 1s linear
+
+.speechContainer
+  position: absolute
+
+.speech
+  position: absolute
+  border: 6vmin solid
+  border-image-slice: 6
+  background: white
+  white-space: pre-wrap
+  max-width: 50vmin
