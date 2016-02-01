@@ -8,6 +8,7 @@ module.exports =
         height: 64
     spawns:
         default: 20
+    floorY: 40
     objects:
         dresser:
             activated: (game) -> switch game.objects.getState "dresser"
