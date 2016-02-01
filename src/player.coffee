@@ -3,7 +3,8 @@ module.exports = (game, spawnName) ->
   element.className = "player"
 
   pixelsPerSecond = 32
-  walkingFrom = walkingTo = element.style.left = game.map.spawns[spawnName or "default"]
+  walkingFrom = walkingTo = game.map.spawns[spawnName or "default"]
+  element.style.left = walkingFrom + "vmin"
   startedWalking = undefined
   walkToTimeout = null
 
