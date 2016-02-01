@@ -12,6 +12,7 @@ module.exports = (map) ->
   element.style.height = map.background.height + "vmin"
 
   output =
+    localization: "english"
     map: map
     element: element
 

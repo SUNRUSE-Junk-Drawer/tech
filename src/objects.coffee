@@ -7,7 +7,8 @@ module.exports = (game) ->
     setState: (name, to) ->
       objectStates[name] = to
       el = objectElements[name]
-      state = game.map.objects[name].states[to]
+      object = game.map.objects[name]
+      state = object.states[to]
       if state is null
         el.style.visibility = "none"
       else
@@ -17,6 +18,8 @@ module.exports = (game) ->
         el.style.width = 1 + state.source.right - state.source.left + "vmin"
         el.style.height = 1 + state.source.bottom - state.source.top + "vmin"
         el.style.backgroundPosition = "-" + state.source.left + "vmin -" + state.source.top + "vmin"
+        title = state.tooltip?[game.localization] or object.tooltip?[game.localization] or null
+        if title isnt null then el.title = title
       return
 
   for key, value of game.map.objects

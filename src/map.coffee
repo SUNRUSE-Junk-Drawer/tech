@@ -13,6 +13,8 @@ module.exports =
             activated: (game) -> switch game.objects.getState "dresser"
                 when "opened" then game.objects.setState "dresser", "closed"
                 when "closed" then game.objects.setState "dresser", "opened"
+            tooltip:
+                english: "The first dresser.  It is closed."
             states:
                 opened:
                     source:
@@ -23,6 +25,8 @@ module.exports =
                     destination:
                         left: 20
                         top: 5
+                    tooltip:
+                        english: "The first dresser.  It is open."
                 closed:
                     source:
                         left: 24
