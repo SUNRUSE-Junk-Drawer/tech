@@ -24,7 +24,7 @@ module.exports = (game) ->
       el = document.createElement "div"
       el.className = "object"
       el.style.backgroundImage = "url('" + game.map.sheet.url + "')"
-      el.style.backgroundSize = game.map.sheet.height + "vmin"
+      el.style.backgroundSize = (Math.max game.map.sheet.width, game.map.sheet.height) + "vmin"
       objectElements[key] = el
       game.objects.setState key, value.states.default
       game.element.appendChild el

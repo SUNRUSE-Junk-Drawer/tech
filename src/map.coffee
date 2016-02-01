@@ -4,6 +4,7 @@ module.exports =
     background: require "./background.png"
     sheet:
         url: require "./sprites.png"
+        width: 64
         height: 64
     spawns:
         default: 20
