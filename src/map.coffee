@@ -1,4 +1,7 @@
 module.exports =
+    width: 384
+    height: 100
+    background: require "./background.png"
     sheet:
         url: require "./sprites.png"
         height: 64
