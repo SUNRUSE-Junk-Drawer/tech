@@ -29,8 +29,8 @@ module.exports = (game) ->
 
       element.appendChild contained
 
-      element.style.left = message.position.x + "vmin"
-      element.style.top = message.position.y + "vmin"
+      element.style.left = message.position.x + "vh"
+      element.style.top = message.position.y + "vh"
 
       game.element.appendChild element
       setTimeout (->

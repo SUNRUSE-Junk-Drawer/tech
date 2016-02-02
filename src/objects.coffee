@@ -13,11 +13,11 @@ module.exports = (game) ->
         el.style.visibility = "none"
       else
         el.style.visibility = "block"
-        el.style.left = state.destination.left + "vmin"
-        el.style.top = state.destination.top + "vmin"
-        el.style.width = 1 + state.source.right - state.source.left + "vmin"
-        el.style.height = 1 + state.source.bottom - state.source.top + "vmin"
-        el.style.backgroundPosition = "-" + state.source.left + "vmin -" + state.source.top + "vmin"
+        el.style.left = state.destination.left + "vh"
+        el.style.top = state.destination.top + "vh"
+        el.style.width = 1 + state.source.right - state.source.left + "vh"
+        el.style.height = 1 + state.source.bottom - state.source.top + "vh"
+        el.style.backgroundPosition = "-" + state.source.left + "vh -" + state.source.top + "vh"
         title = state.tooltip?[game.localization] or object.tooltip?[game.localization] or null
         if title isnt null then el.title = title
       return
@@ -34,7 +34,7 @@ module.exports = (game) ->
       el = document.createElement "div"
       el.className = "object"
       el.style.backgroundImage = "url('" + game.map.sheet.url + "')"
-      el.style.backgroundSize = (Math.max game.map.sheet.width, game.map.sheet.height) + "vmin"
+      el.style.backgroundSize = (Math.max game.map.sheet.width, game.map.sheet.height) + "vh"
       objectElements[key] = el
       game.objects.setState key, value.states.default
       game.element.appendChild el

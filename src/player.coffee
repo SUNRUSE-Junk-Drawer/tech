@@ -7,8 +7,8 @@ module.exports = (game, spawnName) ->
   width = 7
 
   walkingFrom = walkingTo = game.map.spawns[spawnName or "default"]
-  element.style.left = walkingFrom + "vmin"
-  element.style.top = (game.map.floorY - height) + "vmin"
+  element.style.transform = "translateX(" + walkingFrom + "vh)"
+  element.style.top = (game.map.floorY - height) + "vh"
 
   startedWalking = undefined
   walkToTimeout = null
@@ -22,7 +22,7 @@ module.exports = (game, spawnName) ->
       startedWalking = Date.now()
       eta = (Math.abs (x - walkingFrom)) / pixelsPerSecond
       element.style.transitionDuration = eta + "s"
-      element.style.left = x + "vmin"
+      element.style.transform = "translateX(" + x + "vh)"
       if walkToTimeout then clearTimeout walkToTimeout
       walkToTimeout = setTimeout (->
           if callback then callback()
@@ -35,7 +35,7 @@ module.exports = (game, spawnName) ->
           walkingFrom = walkingTo
         else
           walkingTo = walkingFrom = location
-          element.style.left = location + "vmin"
+          element.style.transform = "translateX(" + location + "vh)"
       return
     getLocation: ->
       distanceTravelled = ((Date.now() - startedWalking) * pixelsPerSecond / 1000) / (Math.abs walkingFrom - walkingTo)

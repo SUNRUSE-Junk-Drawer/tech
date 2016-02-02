@@ -5,12 +5,12 @@ speech = require "./speech.coffee"
 module.exports = (map) ->
   element = document.createElement "div"
   element.className = "game"
-  element.style.width = map.width + "vmin"
-  element.style.height = map.height + "vmin"
-  element.style.marginTop = (map.height / -2) + "vmin"
+  element.style.width = map.width + "vh"
+  element.style.height = map.height + "vh"
+  element.style.marginTop = (map.height / -2) + "vh"
   element.style.backgroundImage = "url('" + map.background + "')"
-  element.style.backgroundSize = (Math.max map.width, map.height) + "vmin"
-  
+  element.style.backgroundSize = (Math.max map.width, map.height) + "vh"
+
   output =
     localization: "english"
     map: map
