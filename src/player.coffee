@@ -1,5 +1,5 @@
 module.exports = (game, spawnName) ->
-  element = document.createElement "player"
+  element = document.createElement "div"
   element.className = "player"
 
   pixelsPerSecond = 32
