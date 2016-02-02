@@ -1,6 +1,6 @@
 module.exports =
-    width: 384
-    height: 100
+    width: 100
+    height: 32
     background: require "./background.png"
     sheet:
         url: require "./sprites.png"
@@ -8,7 +8,7 @@ module.exports =
         height: 64
     spawns:
         default: 20
-    floorY: 40
+    floorY: 31
     objects:
         dresser:
             activated: (game) -> switch game.objects.getState "dresser"
@@ -25,7 +25,7 @@ module.exports =
                         bottom: 24
                     destination:
                         left: 20
-                        top: 5
+                        top: 16
                     tooltip:
                         english: "The first dresser.  It is open."
                 closed:
@@ -36,7 +36,7 @@ module.exports =
                         bottom: 45
                     destination:
                         left: 17
-                        top: 5
+                        top: 16
                 default: "opened"
         dresser2:
             activated: (game) -> switch game.objects.getState "dresser2"
@@ -51,7 +51,7 @@ module.exports =
                         bottom: 24
                     destination:
                         left: 50
-                        top: 5
+                        top: 16
                 closed:
                     source:
                         left: 24
@@ -60,7 +60,7 @@ module.exports =
                         bottom: 45
                     destination:
                         left: 47
-                        top: 5
+                        top: 16
                 default: "opened"
         dresser3:
             activated: (game) ->
@@ -95,7 +95,7 @@ module.exports =
                         bottom: 24
                     destination:
                         left: 80
-                        top: 5
+                        top: 16
                 closed:
                     source:
                         left: 24
@@ -104,5 +104,5 @@ module.exports =
                         bottom: 45
                     destination:
                         left: 77
-                        top: 5
+                        top: 16
                 default: "opened"
