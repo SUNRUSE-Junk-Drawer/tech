@@ -49,9 +49,36 @@ body
 
 .speech
   position: absolute
-  border: 8vh solid
-  border-image-slice: 8
+  border-style: solid
   white-space: pre-wrap
   max-width: 50vh
   background: white
   background-clip: content-box
+
+  &[horizontal="left"]
+    right: 0
+
+  &[horizontal="right"]
+    left: 0
+
+  &[vertical="above"]
+    bottom: 0
+
+  &[vertical="below"]
+    top: 0
+
+  &[style="bubble"]
+    border-width: 8vh
+    border-image-slice: 8
+    &[horizontal="left"]
+      margin-right: -4vh
+      &[vertical="above"]
+        border-image-source: url('speechBubbleLeftAbove.png')
+      &[vertical="below"]
+        border-image-source: url('speechBubbleLeftBelow.png')
+    &[horizontal="right"]
+      margin-left: -4vh
+      &[vertical="above"]
+        border-image-source: url('speechBubbleRightAbove.png')
+      &[vertical="below"]
+        border-image-source: url('speechBubbleRightBelow.png')

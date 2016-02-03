@@ -2,9 +2,6 @@ module.exports = (game) ->
 
   game.speech =
     show: (message) ->
-      style = message.style or "bubble"
-      horizontal = message.alignment?.horizontal or "right"
-      vertical = message.alignment?.vertical or "above"
       duration = message.duration or 1500
 
       element = document.createElement "div"
@@ -13,19 +10,11 @@ module.exports = (game) ->
       contained = document.createElement "div"
       contained.className = "speech"
 
-      capsify = (x) -> (x.charAt 0).toUpperCase() + (x.slice 1)
-
-      contained.style.borderImageSource = "url('" + (require ("./speech" + (capsify style) + (capsify horizontal) + (capsify vertical) + ".png")) + "')"
+      contained.setAttribute "horizontal", message.alignment?.horizontal or "right"
+      contained.setAttribute "vertical", message.alignment?.vertical or "above"
+      contained.setAttribute "style", message.style or "bubble"
       contained.textContent = message.text
       contained.innerText = message.text
-
-      switch horizontal
-        when "left" then contained.style.right = "0"
-        when "right" then contained.style.left = "0"
-
-      switch vertical
-        when "above" then contained.style.bottom = "0"
-        when "below" then contained.style.top = "0"
 
       element.appendChild contained
 
