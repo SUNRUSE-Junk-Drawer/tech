@@ -1,6 +1,6 @@
 objects = require "./objects.coffee"
 player = require "./player.coffee"
-speech = require "./speech.coffee"
+bubble = require "./bubble.coffee"
 
 module.exports = (map) ->
   element = document.createElement "div"
@@ -18,6 +18,6 @@ module.exports = (map) ->
 
   objects output
   player output
-  speech output
+  bubble output
 
   element

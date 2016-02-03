@@ -47,5 +47,5 @@ module.exports = (game, spawnName) ->
       message.position =
         x: game.player.getLocation() + width * (if message.alignment?.horizontal is "left" then -0.5 else 0.5)
         y: if message.alignment?.vertical is "below" then game.map.floorY else game.map.floorY - height
-      game.speech.show message
+      game.bubble.show message
       return

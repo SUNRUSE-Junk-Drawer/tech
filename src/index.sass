@@ -44,10 +44,10 @@ body
   margin-left: -3.5vh
   transition: transform 1s linear
 
-.speechContainer
+.bubbleContainer
   position: absolute
 
-.speech
+.bubble
   position: absolute
   border-style: solid
   white-space: pre-wrap
@@ -67,18 +67,18 @@ body
   &[vertical="below"]
     top: 0
 
-  &[style="bubble"]
+  &[style="speech"]
     border-width: 8vh
     border-image-slice: 8
     &[horizontal="left"]
       margin-right: -4vh
       &[vertical="above"]
-        border-image-source: url('speechBubbleLeftAbove.png')
+        border-image-source: url('bubbleSpeechLeftAbove.png')
       &[vertical="below"]
-        border-image-source: url('speechBubbleLeftBelow.png')
+        border-image-source: url('bubbleSpeechLeftBelow.png')
     &[horizontal="right"]
       margin-left: -4vh
       &[vertical="above"]
-        border-image-source: url('speechBubbleRightAbove.png')
+        border-image-source: url('bubbleSpeechRightAbove.png')
       &[vertical="below"]
-        border-image-source: url('speechBubbleRightBelow.png')
+        border-image-source: url('bubbleSpeechRightBelow.png')

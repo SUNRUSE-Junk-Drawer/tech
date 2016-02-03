@@ -1,18 +1,18 @@
 module.exports = (game) ->
 
-  game.speech =
+  game.bubble =
     show: (message) ->
       duration = message.duration or 1500
 
       element = document.createElement "div"
-      element.className = "speechContainer"
+      element.className = "bubbleContainer"
 
       contained = document.createElement "div"
-      contained.className = "speech"
+      contained.className = "bubble"
 
       contained.setAttribute "horizontal", message.alignment?.horizontal or "right"
       contained.setAttribute "vertical", message.alignment?.vertical or "above"
-      contained.setAttribute "style", message.style or "bubble"
+      contained.setAttribute "style", message.style or "speech"
       contained.textContent = message.text
       contained.innerText = message.text
 
